@@ -41,6 +41,14 @@ class Firestore:
         
         return messages
 
+    async def get_all_doctors(self):
+        response = await self.firestore_db.collection("doctors").get()
+
+        doctors = []
+        for doctor in response:
+            doctors.append(doctor.to_dict())
+        
+        return doctors
 
 
 firestore_db: Firestore = Firestore()

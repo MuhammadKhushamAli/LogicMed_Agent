@@ -1,5 +1,5 @@
 from agents import Agent, Runner, RunContextWrapper
-from .agent_tools import get_user_data, get_user_appointments, get_user_messages
+from .agent_tools import get_user_data, get_user_appointments, get_user_messages, get_all_doctors
 from context.context import Context
 
 
@@ -46,7 +46,8 @@ agent: Agent = Agent(
     tools=[
         get_user_data,
         get_user_appointments,
-        get_user_messages
+        get_user_messages,
+        get_all_doctors
     ]
 )
 
