@@ -6,6 +6,7 @@ from fast_api_server.server import app
 import uvicorn
 
 PORT: int = int(os.getenv("PORT"))
+HOST: str = os.getenv("HOST")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=PORT)
+    uvicorn.run(app, host=HOST, port=PORT)
