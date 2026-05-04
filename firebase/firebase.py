@@ -1,11 +1,9 @@
 import firebase_admin
 from firebase_admin import credentials, firestore_async
 from google.cloud.firestore_v1.base_query import FieldFilter, Or
-from dotenv import load_dotenv
 import os
 import json
 
-load_dotenv()
 
 class Firestore:
     def __init__(self):
