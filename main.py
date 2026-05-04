@@ -7,7 +7,5 @@ import uvicorn
 
 PORT: int = int(os.getenv("PORT"))
 
-def main():
+if __name__ == "main":
     uvicorn.run(app, host="0.0.0.0", port=PORT)
-
-main()
