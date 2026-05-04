@@ -12,7 +12,7 @@ class Firestore:
         firebase_admin.initialize_app(credentials_firebase)
         self.firestore_db = firestore_async.client()
     
-    async def get_user(self, user_id: str):
+    async def get_user(self, context_variables: dict):
         response = await self.firestore_db.collection("users").document(user_id).get()
         return response.to_dict()
     
@@ -26,8 +26,7 @@ class Firestore:
 
         appointments = []
         for appointment in response:
-            appointments.append(appointment.to_dict())
-        
+            appointments.append(appointment.to_dict())        
         return appointments
    
     async def get_user_messages(self, user_id: str):

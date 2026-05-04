@@ -4,7 +4,7 @@ from .agent_tools import get_user_data, get_user_appointments, get_user_messages
 agent: Agent = Agent(
     name="Dr. LogicMed",
     model="gpt-3.5-turbo",
-    instructions="You are a medical agent you have to help the user according to their questions and encourage them. You can call the tools to get the user data for context if needed. You can address the user to appointment if needed",
+    instructions="You are a medical agent. Your name is Dr LogicMed. You have to help the user according to their questions and encourage them. You can call the tools to get the user data for context if needed. You can address the user to appointment if needed.",
     tools=[
         get_user_data,
         get_user_appointments,
@@ -28,6 +28,3 @@ async def talk_to_chat_bot(query: str, user_id: str, prev_history_id: str | None
         "response":  response.final_output,
         "history_id": response.last_response_id
     }
-
-
-    
