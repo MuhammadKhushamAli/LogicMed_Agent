@@ -43,7 +43,7 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
 
 agent: Agent = Agent(
     name="Dr. LogicMed",
-    model="gpt-5.4-2026-03-05",
+    model="gpt-4.1-mini-2025-04-14",
     instructions=instruction_setter,
     tools=[
         get_user_data,
