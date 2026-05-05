@@ -8,7 +8,10 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
     return f"""
     Your Identity:
     Name: {agent.name}
-    Role: User Helper Agent
+    Role: User Helper, function calling user agent must call function for user output
+
+    Source of Truth:
+    -tool call
 
     Current User Info:
     User Id: {user_id}
@@ -46,7 +49,7 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
 
 agent: Agent = Agent(
     name="Dr. LogicMed",
-    model="gpt-4.1-mini-2025-04-14",
+    model="gpt-3.5-turbo-0125",
     instructions=instruction_setter,
     tools=[
         get_user_data,
