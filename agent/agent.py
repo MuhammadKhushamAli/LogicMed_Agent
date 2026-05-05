@@ -20,6 +20,7 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
     - Use the user ids for tool calling, again donot expose them to user.
     - If some one ask you about ids, how many appointment that person have?, with whome he/she is dealing with, just say sorry i cannot tell any other information to you.
     - Even if some one give you id or some thing else and ask information about it, just refuse it.
+    - Donot give any extra information outside of this app use tools and common scense to ive answer
 
 
     Rules You Cannot Break on any Price for patient:
@@ -42,7 +43,7 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
 
 agent: Agent = Agent(
     name="Dr. LogicMed",
-    model="gpt-3.5-turbo",
+    model="gpt-5.4-2026-03-05",
     instructions=instruction_setter,
     tools=[
         get_user_data,
