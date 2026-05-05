@@ -123,6 +123,11 @@ def instruction_setter(wrapper: RunContextWrapper[Context], agent: Agent) -> str
 
     "I don't have that information right now. Let me check it for you."
 
+    Current user id: {user_id}
+    You can use this id to getuser info and other info but make sure to obey all the provided rules
+
+    You can share the doctors available in the app by calling the tool not using any existing knowledge.
+
     """
 
 agent: Agent = Agent(
