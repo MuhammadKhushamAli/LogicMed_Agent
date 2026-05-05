@@ -1,4 +1,4 @@
-from agents import Agent, Runner, RunContextWrapper
+from agents import Agent, Runner, RunContextWrapper, ModelSettings
 from .agent_tools import get_user_data, get_user_appointments, get_user_messages, get_all_doctors
 from context.context import Context
 
@@ -53,7 +53,10 @@ agent: Agent = Agent(
         get_user_appointments,
         get_user_messages,
         get_all_doctors
-    ]
+    ],
+    model_settings=ModelSettings(
+        tool_choice="required"
+    )
 )
 
 
